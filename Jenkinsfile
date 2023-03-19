@@ -9,7 +9,7 @@ pipeline {
           }
           stage('Build') {
                steps {
-                    bat 'mvn package -DskipTests'
+                    sh 'mvn package -DskipTests'
                }
           }
           stage('Test') {
@@ -20,7 +20,7 @@ pipeline {
           }
           stage('Deploy') {
                steps {
-                    bat 'java -jar ./target/menu-0.0.1-SNAPSHOT.jar'
+                    sh 'java -jar ./target/menu-0.0.1-SNAPSHOT.jar'
                }
           }
      }
